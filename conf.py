@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Diplomado en Analítica para Mercados de Energía"
-copyright = "Juan D. Velasquez"
-author = "Juan D. Velasquez"
+project = "Indicadores bibliometricos de la Revista DYNA-Colombia"
+copyright = "Facultad de Minas, Universidad Nacional de Colombia, 2023"
+author = "Juan D. Velasquez & Carlos A. Torres"
 
 # The short X.Y version
 version = ""
@@ -182,7 +182,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "diplomado.tex", "Diplomado", "Juan D. Velasquez", "manual"),
+    (master_doc, "dyna.tex", "Dyna", "Juan D. Velasquez & Carlos A. Torres", "manual"),
 ]
 
 
@@ -190,7 +190,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "Diplomado", "Diplomado", [author], 1)]
+man_pages = [(master_doc, "Dyna", "Dyna", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -201,11 +201,11 @@ man_pages = [(master_doc, "Diplomado", "Diplomado", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "Diplomado",
-        "Diplomado",
+        "Dyna",
+        "Dyna",
         author,
         "Diplomado",
-        "Analítica para Mercados de Energía",
+        "Dyna",
         "Miscellaneous",
     ),
 ]
