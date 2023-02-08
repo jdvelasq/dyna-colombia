@@ -1,4 +1,4 @@
-Descripción General
+Revistas
 ================================================================================
 
     .. toctree::
@@ -6,6 +6,4 @@ Descripción General
         :titlesonly:
         :glob:
 
-        main_information
-        annual_scientific_production
-        average_citations_per_year
+        
