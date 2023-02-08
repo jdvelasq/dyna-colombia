@@ -2,7 +2,7 @@ Análisis de la Revista DYNA-Colombia
 ===============================================================================
 
 
-Este documento presenta los principales indicadores bibliometricos de la 
+Este documento presenta los principales indicadores bibliométricos de la 
 revista DYNA-Colombia, editada por la Facultad de Minas, Universidad Nacional 
 de Colombia,
 
