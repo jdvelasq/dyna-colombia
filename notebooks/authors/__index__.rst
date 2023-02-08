@@ -1,11 +1,9 @@
 Autores
-================================================================================
+-------------------------------------------------------------------------------
 
-    .. toctree::
-        :maxdepth: 2
-        :titlesonly:
+.. toctree::
+    :maxdepth: 1
 
-
-        authors/__index__.rst
-        organizations/__index__.rst
-        countries/__index__.rst
+    authors/__index__
+    organizations/__index__
+    countries/__index__

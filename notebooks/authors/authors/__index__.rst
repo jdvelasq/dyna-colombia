@@ -2,7 +2,6 @@ Autores
 -------------------------------------------------------------------------------
 
 .. toctree::
-    :titlesonly:
 
     most_frequent_authors
     most_global_cited_authors
