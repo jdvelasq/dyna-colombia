@@ -2,7 +2,8 @@ Referencias citadas
 -------------------------------------------------------------------------------
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
-    :glob:
+
+    most_local_cited_references
+    most_global_cited_references
+
 

@@ -2,7 +2,9 @@ Palabras clave
 -------------------------------------------------------------------------------
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
-    :glob:
+
+    most_frequent_words
+    wordcloud
+    word_dynamics
+    trend_topics
 
