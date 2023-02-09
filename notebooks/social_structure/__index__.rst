@@ -1,6 +1,8 @@
 Estructura social
 -------------------------------------------------------------------------------
 
-    .. toctree::
-        :maxdepth: 1
+.. toctree::
+
+    co_authorship_network
+    collaboration_worldmap
 
