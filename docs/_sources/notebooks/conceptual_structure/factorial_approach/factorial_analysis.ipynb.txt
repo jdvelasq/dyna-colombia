@@ -1,0 +1,335 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "10d92dbc-3803-4d61-adab-26298aa373a3",
+   "metadata": {},
+   "source": [
+    "Análisis factorial \n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "23c29cb5-c7f9-45f3-a547-27dbfa3b7122",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.manifold import MDS\n",
+    "mds = MDS(n_components=2, random_state=0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "9d590219-1fae-4997-87fb-0c14012cc6f1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.cluster import AgglomerativeClustering\n",
+    "ac = AgglomerativeClustering(n_clusters=4)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "48c270fa-4683-4430-95d9-9028472a511f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Note: to be able to use all crisp methods, you need to install some additional packages:  {'graph_tool'}\n"
+     ]
+    },
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "\t\t\t<script type=\"text/javascript\">\n",
+       "\t\t\t<!--\n",
+       "\t\t\t\t\n",
+       "\t\t\t{\n",
+       "\t\t\t\tvar element = document.getElementById('NetworKit_script');\n",
+       "\t\t\t\tif (element) {\n",
+       "\t\t\t\t\telement.parentNode.removeChild(element);\n",
+       "\t\t\t\t}\n",
+       "\t\t\t\telement = document.createElement('script');\n",
+       "\t\t\t\telement.type = 'text/javascript';\n",
+       "\t\t\t\telement.innerHTML = 'function NetworKit_pageEmbed(id) { var i, j; var elements; elements = document.getElementById(id).getElementsByClassName(\"Plot\"); for (i=0; i<elements.length; i++) { elements[i].id = id + \"_Plot_\" + i; var data = elements[i].getAttribute(\"data-image\").split(\"|\"); elements[i].removeAttribute(\"data-image\"); var content = \"<div class=\\\\\"Image\\\\\" id=\\\\\"\" + elements[i].id + \"_Image\\\\\" />\"; elements[i].innerHTML = content; elements[i].setAttribute(\"data-image-index\", 0); elements[i].setAttribute(\"data-image-length\", data.length); for (j=0; j<data.length; j++) { elements[i].setAttribute(\"data-image-\" + j, data[j]); } NetworKit_plotUpdate(elements[i]); elements[i].onclick = function (e) { NetworKit_overlayShow((e.target) ? e.target : e.srcElement); } } elements = document.getElementById(id).getElementsByClassName(\"HeatCell\"); for (i=0; i<elements.length; i++) { var data = parseFloat(elements[i].getAttribute(\"data-heat\")); var color = \"#00FF00\"; if (data <= 1 && data > 0) { color = \"hsla(0, 100%, 75%, \" + (data) + \")\"; } else if (data <= 0 && data >= -1) { color = \"hsla(240, 100%, 75%, \" + (-data) + \")\"; } elements[i].style.backgroundColor = color; } elements = document.getElementById(id).getElementsByClassName(\"Details\"); for (i=0; i<elements.length; i++) { elements[i].setAttribute(\"data-title\", \"-\"); NetworKit_toggleDetails(elements[i]); elements[i].onclick = function (e) { NetworKit_toggleDetails((e.target) ? e.target : e.srcElement); } } elements = document.getElementById(id).getElementsByClassName(\"MathValue\"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === \"nan\") { elements[i].parentNode.innerHTML = \"\" } } elements = document.getElementById(id).getElementsByClassName(\"SubCategory\"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === \"\") { elements[i].parentNode.removeChild(elements[i]) } } elements = document.getElementById(id).getElementsByClassName(\"Category\"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === \"\") { elements[i].parentNode.removeChild(elements[i]) } } var isFirefox = false; try { isFirefox = typeof InstallTrigger !== \"undefined\"; } catch (e) {} if (!isFirefox) { alert(\"Currently the function\\'s output is only fully supported by Firefox.\"); } } function NetworKit_plotUpdate(source) { var index = source.getAttribute(\"data-image-index\"); var data = source.getAttribute(\"data-image-\" + index); var image = document.getElementById(source.id + \"_Image\"); image.style.backgroundImage = \"url(\" + data + \")\"; } function NetworKit_showElement(id, show) { var element = document.getElementById(id); element.style.display = (show) ? \"block\" : \"none\"; } function NetworKit_overlayShow(source) { NetworKit_overlayUpdate(source); NetworKit_showElement(\"NetworKit_Overlay\", true); } function NetworKit_overlayUpdate(source) { document.getElementById(\"NetworKit_Overlay_Title\").innerHTML = source.title; var index = source.getAttribute(\"data-image-index\"); var data = source.getAttribute(\"data-image-\" + index); var image = document.getElementById(\"NetworKit_Overlay_Image\"); image.setAttribute(\"data-id\", source.id); image.style.backgroundImage = \"url(\" + data + \")\"; var link = document.getElementById(\"NetworKit_Overlay_Toolbar_Bottom_Save\"); link.href = data; link.download = source.title + \".svg\"; } function NetworKit_overlayImageShift(delta) { var image = document.getElementById(\"NetworKit_Overlay_Image\"); var source = document.getElementById(image.getAttribute(\"data-id\")); var index = parseInt(source.getAttribute(\"data-image-index\")); var length = parseInt(source.getAttribute(\"data-image-length\")); var index = (index+delta) % length; if (index < 0) { index = length + index; } source.setAttribute(\"data-image-index\", index); NetworKit_overlayUpdate(source); } function NetworKit_toggleDetails(source) { var childs = source.children; var show = false; if (source.getAttribute(\"data-title\") == \"-\") { source.setAttribute(\"data-title\", \"+\"); show = false; } else { source.setAttribute(\"data-title\", \"-\"); show = true; } for (i=0; i<childs.length; i++) { if (show) { childs[i].style.display = \"block\"; } else { childs[i].style.display = \"none\"; } } }';\n",
+       "\t\t\t\telement.setAttribute('id', 'NetworKit_script');\n",
+       "\t\t\t\tdocument.head.appendChild(element);\n",
+       "\t\t\t}\n",
+       "\t\t\n",
+       "\t\t\t\t\n",
+       "\t\t\t{\n",
+       "\t\t\t\tvar element = document.getElementById('NetworKit_style');\n",
+       "\t\t\t\tif (element) {\n",
+       "\t\t\t\t\telement.parentNode.removeChild(element);\n",
+       "\t\t\t\t}\n",
+       "\t\t\t\telement = document.createElement('style');\n",
+       "\t\t\t\telement.type = 'text/css';\n",
+       "\t\t\t\telement.innerHTML = '.NetworKit_Page { font-family: Arial, Helvetica, sans-serif; font-size: 14px; } .NetworKit_Page .Value:before { font-family: Arial, Helvetica, sans-serif; font-size: 1.05em; content: attr(data-title) \":\"; margin-left: -2.5em; padding-right: 0.5em; } .NetworKit_Page .Details .Value:before { display: block; } .NetworKit_Page .Value { font-family: monospace; white-space: pre; padding-left: 2.5em; white-space: -moz-pre-wrap !important; white-space: -pre-wrap; white-space: -o-pre-wrap; white-space: pre-wrap; word-wrap: break-word; tab-size: 4; -moz-tab-size: 4; } .NetworKit_Page .Category { clear: both; padding-left: 1em; margin-bottom: 1.5em; } .NetworKit_Page .Category:before { content: attr(data-title); font-size: 1.75em; display: block; margin-left: -0.8em; margin-bottom: 0.5em; } .NetworKit_Page .SubCategory { margin-bottom: 1.5em; padding-left: 1em; } .NetworKit_Page .SubCategory:before { font-size: 1.6em; display: block; margin-left: -0.8em; margin-bottom: 0.5em; } .NetworKit_Page .SubCategory[data-title]:before { content: attr(data-title); } .NetworKit_Page .Block { display: block; } .NetworKit_Page .Block:after { content: \".\"; visibility: hidden; display: block; height: 0; clear: both; } .NetworKit_Page .Block .Thumbnail_Overview, .NetworKit_Page .Block .Thumbnail_ScatterPlot { width: 260px; float: left; } .NetworKit_Page .Block .Thumbnail_Overview img, .NetworKit_Page .Block .Thumbnail_ScatterPlot img { width: 260px; } .NetworKit_Page .Block .Thumbnail_Overview:before, .NetworKit_Page .Block .Thumbnail_ScatterPlot:before { display: block; text-align: center; font-weight: bold; } .NetworKit_Page .Block .Thumbnail_Overview:before { content: attr(data-title); } .NetworKit_Page .HeatCell { font-family: \"Courier New\", Courier, monospace; cursor: pointer; } .NetworKit_Page .HeatCell, .NetworKit_Page .HeatCellName { display: inline; padding: 0.1em; margin-right: 2px; background-color: #FFFFFF } .NetworKit_Page .HeatCellName { margin-left: 0.25em; } .NetworKit_Page .HeatCell:before { content: attr(data-heat); display: inline-block; color: #000000; width: 4em; text-align: center; } .NetworKit_Page .Measure { clear: both; } .NetworKit_Page .Measure .Details { cursor: pointer; } .NetworKit_Page .Measure .Details:before { content: \"[\" attr(data-title) \"]\"; display: block; } .NetworKit_Page .Measure .Details .Value { border-left: 1px dotted black; margin-left: 0.4em; padding-left: 3.5em; pointer-events: none; } .NetworKit_Page .Measure .Details .Spacer:before { content: \".\"; opacity: 0.0; pointer-events: none; } .NetworKit_Page .Measure .Plot { width: 440px; height: 440px; cursor: pointer; float: left; margin-left: -0.9em; margin-right: 20px; } .NetworKit_Page .Measure .Plot .Image { background-repeat: no-repeat; background-position: center center; background-size: contain; height: 100%; pointer-events: none; } .NetworKit_Page .Measure .Stat { width: 500px; float: left; } .NetworKit_Page .Measure .Stat .Group { padding-left: 1.25em; margin-bottom: 0.75em; } .NetworKit_Page .Measure .Stat .Group .Title { font-size: 1.1em; display: block; margin-bottom: 0.3em; margin-left: -0.75em; border-right-style: dotted; border-right-width: 1px; border-bottom-style: dotted; border-bottom-width: 1px; background-color: #D0D0D0; padding-left: 0.2em; } .NetworKit_Page .Measure .Stat .Group .List { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; } .NetworKit_Page .Measure .Stat .Group .List .Entry { position: relative; line-height: 1.75em; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:before { position: absolute; left: 0; top: -40px; background-color: #808080; color: #ffffff; height: 30px; line-height: 30px; border-radius: 5px; padding: 0 15px; content: attr(data-tooltip); white-space: nowrap; display: none; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:after { position: absolute; left: 15px; top: -10px; border-top: 7px solid #808080; border-left: 7px solid transparent; border-right: 7px solid transparent; content: \"\"; display: none; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:hover:after, .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:hover:before { display: block; } .NetworKit_Page .Measure .Stat .Group .List .Entry .MathValue { font-family: \"Courier New\", Courier, monospace; } .NetworKit_Page .Measure:after { content: \".\"; visibility: hidden; display: block; height: 0; clear: both; } .NetworKit_Page .PartitionPie { clear: both; } .NetworKit_Page .PartitionPie img { width: 600px; } #NetworKit_Overlay { left: 0px; top: 0px; display: none; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; } #NetworKit_Overlay_Title { position: absolute; color: white; transform: rotate(-90deg); width: 32em; height: 32em; padding-right: 0.5em; padding-top: 0.5em; text-align: right; font-size: 40px; } #NetworKit_Overlay .button { background: white; cursor: pointer; } #NetworKit_Overlay .button:before { size: 13px; display: inline-block; text-align: center; margin-top: 0.5em; margin-bottom: 0.5em; width: 1.5em; height: 1.5em; } #NetworKit_Overlay .icon-close:before { content: \"X\"; } #NetworKit_Overlay .icon-previous:before { content: \"P\"; } #NetworKit_Overlay .icon-next:before { content: \"N\"; } #NetworKit_Overlay .icon-save:before { content: \"S\"; } #NetworKit_Overlay_Toolbar_Top, #NetworKit_Overlay_Toolbar_Bottom { position: absolute; width: 40px; right: 13px; text-align: right; z-index: 1100; } #NetworKit_Overlay_Toolbar_Top { top: 0.5em; } #NetworKit_Overlay_Toolbar_Bottom { Bottom: 0.5em; } #NetworKit_Overlay_ImageContainer { position: absolute; top: 5%; left: 5%; height: 90%; width: 90%; background-repeat: no-repeat; background-position: center center; background-size: contain; } #NetworKit_Overlay_Image { height: 100%; width: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; }';\n",
+       "\t\t\t\telement.setAttribute('id', 'NetworKit_style');\n",
+       "\t\t\t\tdocument.head.appendChild(element);\n",
+       "\t\t\t}\n",
+       "\t\t\n",
+       "\t\t\t\t\n",
+       "\t\t\t{\n",
+       "\t\t\t\tvar element = document.getElementById('NetworKit_Overlay');\n",
+       "\t\t\t\tif (element) {\n",
+       "\t\t\t\t\telement.parentNode.removeChild(element);\n",
+       "\t\t\t\t}\n",
+       "\t\t\t\telement = document.createElement('div');\n",
+       "\t\t\t\telement.innerHTML = '<div id=\"NetworKit_Overlay_Toolbar_Top\"><div class=\"button icon-close\" id=\"NetworKit_Overlay_Close\" /></div><div id=\"NetworKit_Overlay_Title\" /> <div id=\"NetworKit_Overlay_ImageContainer\"> <div id=\"NetworKit_Overlay_Image\" /> </div> <div id=\"NetworKit_Overlay_Toolbar_Bottom\"> <div class=\"button icon-previous\" onclick=\"NetworKit_overlayImageShift(-1)\" /> <div class=\"button icon-next\" onclick=\"NetworKit_overlayImageShift(1)\" /> <a id=\"NetworKit_Overlay_Toolbar_Bottom_Save\"><div class=\"button icon-save\" /></a> </div>';\n",
+       "\t\t\t\telement.setAttribute('id', 'NetworKit_Overlay');\n",
+       "\t\t\t\tdocument.body.appendChild(element);\n",
+       "\t\t\t\tdocument.getElementById('NetworKit_Overlay_Close').onclick = function (e) {\n",
+       "\t\t\t\t\tdocument.getElementById('NetworKit_Overlay').style.display = 'none';\n",
+       "\t\t\t\t}\n",
+       "\t\t\t}\n",
+       "\t\t\n",
+       "\t\t\t-->\n",
+       "\t\t\t</script>\n",
+       "\t\t"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "from techminer2 import bibliometrix\n",
+    "\n",
+    "fa = bibliometrix.conceptual_structure.factorial_analysis(\n",
+    "    criterion='author_keywords',\n",
+    "    manifold_method=mds,\n",
+    "    clustering_method=ac,\n",
+    "    topic_min_occ=2,\n",
+    "    directory=\"../../../data/\",\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "c7e99f03-cf73-4744-b017-c50eeac19585",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Dim-1</th>\n",
+       "      <th>Dim-2</th>\n",
+       "      <th>CLUSTER</th>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>row</th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "      <th></th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>optimization 31:103</th>\n",
+       "      <td>7.249085</td>\n",
+       "      <td>30.180005</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>modeling 22:118</th>\n",
+       "      <td>22.503274</td>\n",
+       "      <td>-0.729717</td>\n",
+       "      <td>0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>simulation 22:045</th>\n",
+       "      <td>-21.942152</td>\n",
+       "      <td>5.474724</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>supply chains 16:111</th>\n",
+       "      <td>-10.331440</td>\n",
+       "      <td>13.045553</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>artificial neural network 15:076</th>\n",
+       "      <td>2.735583</td>\n",
+       "      <td>-15.854705</td>\n",
+       "      <td>2</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                                      Dim-1      Dim-2  CLUSTER\n",
+       "row                                                            \n",
+       "optimization 31:103                7.249085  30.180005        3\n",
+       "modeling 22:118                   22.503274  -0.729717        0\n",
+       "simulation 22:045                -21.942152   5.474724        1\n",
+       "supply chains 16:111             -10.331440  13.045553        1\n",
+       "artificial neural network 15:076   2.735583 -15.854705        2"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "fa.table_.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "5190d8f1-bbed-46fa-a1c2-a7ab438f8180",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>CL_00</th>\n",
+       "      <th>CL_01</th>\n",
+       "      <th>CL_02</th>\n",
+       "      <th>CL_03</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>modeling 22:118</td>\n",
+       "      <td>simulation 22:045</td>\n",
+       "      <td>artificial neural network 15:076</td>\n",
+       "      <td>optimization 31:103</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>sustainability 14:047</td>\n",
+       "      <td>supply chains 16:111</td>\n",
+       "      <td>finite element method 14:014</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>genetic algorithms 12:040</td>\n",
+       "      <td>renewable energy 13:046</td>\n",
+       "      <td>mechanical properties 13:033</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>quality 12:022</td>\n",
+       "      <td>power quality 11:064</td>\n",
+       "      <td>temperature 08:066</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>energy efficiency 11:051</td>\n",
+       "      <td>viscosity 10:040</td>\n",
+       "      <td>coatings 08:031</td>\n",
+       "      <td></td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                       CL_00                    CL_01  \\\n",
+       "0            modeling 22:118        simulation 22:045   \n",
+       "1      sustainability 14:047     supply chains 16:111   \n",
+       "2  genetic algorithms 12:040  renewable energy 13:046   \n",
+       "3             quality 12:022     power quality 11:064   \n",
+       "4   energy efficiency 11:051         viscosity 10:040   \n",
+       "\n",
+       "                              CL_02                CL_03  \n",
+       "0  artificial neural network 15:076  optimization 31:103  \n",
+       "1      finite element method 14:014                       \n",
+       "2      mechanical properties 13:033                       \n",
+       "3                temperature 08:066                       \n",
+       "4                   coatings 08:031                       "
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "fa.cluster_members_.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9d3cfa8d-f3ab-406d-9337-e7605f9354d3",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

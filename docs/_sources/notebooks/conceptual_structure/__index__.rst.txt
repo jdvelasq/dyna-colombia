@@ -2,6 +2,7 @@ Estructura conceptual
 -------------------------------------------------------------------------------
 
 .. toctree::
+    :maxdepth: 1
 
-    co_occurrence_network
+    network_approach/__index__
 

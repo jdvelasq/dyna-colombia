@@ -7,4 +7,5 @@ Palabras clave
     wordcloud
     word_dynamics
     trend_topics
+    treemap
 

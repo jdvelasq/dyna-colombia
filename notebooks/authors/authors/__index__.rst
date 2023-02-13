@@ -7,4 +7,5 @@ Autores
     most_global_cited_authors
     most_local_cited_authors
     authors_production_over_time
+    lotkas_law
     author_impact

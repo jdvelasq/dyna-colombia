@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa temático &mdash; documentación de Indicadores bibliometricos de la Revista DYNA-Colombia - </title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Gráfica de evolución temática" href="thematic_evolution_plot.html" />
+    <link rel="prev" title="Red de co-ocurrencias" href="co_occurrence_network.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Indicadores bibliometricos de la Revista DYNA-Colombia
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Indicadores básicos</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview/__index__.html">Descripción General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sources/__index__.html">Revistas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors/__index__.html">Autores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../documents/__index__.html">Documentos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../clustering/__index__.html">Clustering</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../__index__.html">Estructura conceptual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="__index__.html">Aproximación con redes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="co_occurrence_network.html">Red de co-ocurrencias</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mapa temático</a></li>
+<li class="toctree-l3"><a class="reference internal" href="thematic_evolution_plot.html">Gráfica de evolución temática</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../intellectual_structure/__index__.html">Estructura intelectual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../social_structure/__index__.html">Estructura social</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Indicadores bibliometricos de la Revista DYNA-Colombia</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../__index__.html">Estructura conceptual</a> &raquo;</li>
+          <li><a href="__index__.html">Aproximación con redes</a> &raquo;</li>
+      <li>Mapa temático</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/notebooks/conceptual_structure/network_approach/thematic_map.ipynb.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Mapa-temático">
+<h1>Mapa temático<a class="headerlink" href="#Mapa-temático" title="Enlazar permanentemente con este título"></a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">techminer2</span> <span class="kn">import</span> <span class="n">bibliometrix</span>
+
+<span class="n">nnet</span> <span class="o">=</span> <span class="n">bibliometrix</span><span class="o">.</span><span class="n">conceptual_structure</span><span class="o">.</span><span class="n">thematic_map</span><span class="p">(</span>
+    <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;author_keywords&quot;</span><span class="p">,</span>
+    <span class="n">topics_length</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">directory</span><span class="o">=</span><span class="s2">&quot;../../../data/&quot;</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
+    <span class="n">nx_k</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">nx_iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">delta</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Note: to be able to use all crisp methods, you need to install some additional packages:  {&#39;graph_tool&#39;}
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<script type="text/javascript">
+<!--
+
+{
+        var element = document.getElementById('NetworKit_script');
+        if (element) {
+                element.parentNode.removeChild(element);
+        }
+        element = document.createElement('script');
+        element.type = 'text/javascript';
+        element.innerHTML = 'function NetworKit_pageEmbed(id) { var i, j; var elements; elements = document.getElementById(id).getElementsByClassName("Plot"); for (i=0; i<elements.length; i++) { elements[i].id = id + "_Plot_" + i; var data = elements[i].getAttribute("data-image").split("|"); elements[i].removeAttribute("data-image"); var content = "<div class=\\"Image\\" id=\\"" + elements[i].id + "_Image\\" />"; elements[i].innerHTML = content; elements[i].setAttribute("data-image-index", 0); elements[i].setAttribute("data-image-length", data.length); for (j=0; j<data.length; j++) { elements[i].setAttribute("data-image-" + j, data[j]); } NetworKit_plotUpdate(elements[i]); elements[i].onclick = function (e) { NetworKit_overlayShow((e.target) ? e.target : e.srcElement); } } elements = document.getElementById(id).getElementsByClassName("HeatCell"); for (i=0; i<elements.length; i++) { var data = parseFloat(elements[i].getAttribute("data-heat")); var color = "#00FF00"; if (data <= 1 && data > 0) { color = "hsla(0, 100%, 75%, " + (data) + ")"; } else if (data <= 0 && data >= -1) { color = "hsla(240, 100%, 75%, " + (-data) + ")"; } elements[i].style.backgroundColor = color; } elements = document.getElementById(id).getElementsByClassName("Details"); for (i=0; i<elements.length; i++) { elements[i].setAttribute("data-title", "-"); NetworKit_toggleDetails(elements[i]); elements[i].onclick = function (e) { NetworKit_toggleDetails((e.target) ? e.target : e.srcElement); } } elements = document.getElementById(id).getElementsByClassName("MathValue"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === "nan") { elements[i].parentNode.innerHTML = "" } } elements = document.getElementById(id).getElementsByClassName("SubCategory"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === "") { elements[i].parentNode.removeChild(elements[i]) } } elements = document.getElementById(id).getElementsByClassName("Category"); for (i=elements.length-1; i>=0; i--) { value = elements[i].innerHTML.trim(); if (value === "") { elements[i].parentNode.removeChild(elements[i]) } } var isFirefox = false; try { isFirefox = typeof InstallTrigger !== "undefined"; } catch (e) {} if (!isFirefox) { alert("Currently the function\'s output is only fully supported by Firefox."); } } function NetworKit_plotUpdate(source) { var index = source.getAttribute("data-image-index"); var data = source.getAttribute("data-image-" + index); var image = document.getElementById(source.id + "_Image"); image.style.backgroundImage = "url(" + data + ")"; } function NetworKit_showElement(id, show) { var element = document.getElementById(id); element.style.display = (show) ? "block" : "none"; } function NetworKit_overlayShow(source) { NetworKit_overlayUpdate(source); NetworKit_showElement("NetworKit_Overlay", true); } function NetworKit_overlayUpdate(source) { document.getElementById("NetworKit_Overlay_Title").innerHTML = source.title; var index = source.getAttribute("data-image-index"); var data = source.getAttribute("data-image-" + index); var image = document.getElementById("NetworKit_Overlay_Image"); image.setAttribute("data-id", source.id); image.style.backgroundImage = "url(" + data + ")"; var link = document.getElementById("NetworKit_Overlay_Toolbar_Bottom_Save"); link.href = data; link.download = source.title + ".svg"; } function NetworKit_overlayImageShift(delta) { var image = document.getElementById("NetworKit_Overlay_Image"); var source = document.getElementById(image.getAttribute("data-id")); var index = parseInt(source.getAttribute("data-image-index")); var length = parseInt(source.getAttribute("data-image-length")); var index = (index+delta) % length; if (index < 0) { index = length + index; } source.setAttribute("data-image-index", index); NetworKit_overlayUpdate(source); } function NetworKit_toggleDetails(source) { var childs = source.children; var show = false; if (source.getAttribute("data-title") == "-") { source.setAttribute("data-title", "+"); show = false; } else { source.setAttribute("data-title", "-"); show = true; } for (i=0; i<childs.length; i++) { if (show) { childs[i].style.display = "block"; } else { childs[i].style.display = "none"; } } }';
+        element.setAttribute('id', 'NetworKit_script');
+        document.head.appendChild(element);
+}
+
+
+{
+        var element = document.getElementById('NetworKit_style');
+        if (element) {
+                element.parentNode.removeChild(element);
+        }
+        element = document.createElement('style');
+        element.type = 'text/css';
+        element.innerHTML = '.NetworKit_Page { font-family: Arial, Helvetica, sans-serif; font-size: 14px; } .NetworKit_Page .Value:before { font-family: Arial, Helvetica, sans-serif; font-size: 1.05em; content: attr(data-title) ":"; margin-left: -2.5em; padding-right: 0.5em; } .NetworKit_Page .Details .Value:before { display: block; } .NetworKit_Page .Value { font-family: monospace; white-space: pre; padding-left: 2.5em; white-space: -moz-pre-wrap !important; white-space: -pre-wrap; white-space: -o-pre-wrap; white-space: pre-wrap; word-wrap: break-word; tab-size: 4; -moz-tab-size: 4; } .NetworKit_Page .Category { clear: both; padding-left: 1em; margin-bottom: 1.5em; } .NetworKit_Page .Category:before { content: attr(data-title); font-size: 1.75em; display: block; margin-left: -0.8em; margin-bottom: 0.5em; } .NetworKit_Page .SubCategory { margin-bottom: 1.5em; padding-left: 1em; } .NetworKit_Page .SubCategory:before { font-size: 1.6em; display: block; margin-left: -0.8em; margin-bottom: 0.5em; } .NetworKit_Page .SubCategory[data-title]:before { content: attr(data-title); } .NetworKit_Page .Block { display: block; } .NetworKit_Page .Block:after { content: "."; visibility: hidden; display: block; height: 0; clear: both; } .NetworKit_Page .Block .Thumbnail_Overview, .NetworKit_Page .Block .Thumbnail_ScatterPlot { width: 260px; float: left; } .NetworKit_Page .Block .Thumbnail_Overview img, .NetworKit_Page .Block .Thumbnail_ScatterPlot img { width: 260px; } .NetworKit_Page .Block .Thumbnail_Overview:before, .NetworKit_Page .Block .Thumbnail_ScatterPlot:before { display: block; text-align: center; font-weight: bold; } .NetworKit_Page .Block .Thumbnail_Overview:before { content: attr(data-title); } .NetworKit_Page .HeatCell { font-family: "Courier New", Courier, monospace; cursor: pointer; } .NetworKit_Page .HeatCell, .NetworKit_Page .HeatCellName { display: inline; padding: 0.1em; margin-right: 2px; background-color: #FFFFFF } .NetworKit_Page .HeatCellName { margin-left: 0.25em; } .NetworKit_Page .HeatCell:before { content: attr(data-heat); display: inline-block; color: #000000; width: 4em; text-align: center; } .NetworKit_Page .Measure { clear: both; } .NetworKit_Page .Measure .Details { cursor: pointer; } .NetworKit_Page .Measure .Details:before { content: "[" attr(data-title) "]"; display: block; } .NetworKit_Page .Measure .Details .Value { border-left: 1px dotted black; margin-left: 0.4em; padding-left: 3.5em; pointer-events: none; } .NetworKit_Page .Measure .Details .Spacer:before { content: "."; opacity: 0.0; pointer-events: none; } .NetworKit_Page .Measure .Plot { width: 440px; height: 440px; cursor: pointer; float: left; margin-left: -0.9em; margin-right: 20px; } .NetworKit_Page .Measure .Plot .Image { background-repeat: no-repeat; background-position: center center; background-size: contain; height: 100%; pointer-events: none; } .NetworKit_Page .Measure .Stat { width: 500px; float: left; } .NetworKit_Page .Measure .Stat .Group { padding-left: 1.25em; margin-bottom: 0.75em; } .NetworKit_Page .Measure .Stat .Group .Title { font-size: 1.1em; display: block; margin-bottom: 0.3em; margin-left: -0.75em; border-right-style: dotted; border-right-width: 1px; border-bottom-style: dotted; border-bottom-width: 1px; background-color: #D0D0D0; padding-left: 0.2em; } .NetworKit_Page .Measure .Stat .Group .List { -webkit-column-count: 3; -moz-column-count: 3; column-count: 3; } .NetworKit_Page .Measure .Stat .Group .List .Entry { position: relative; line-height: 1.75em; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:before { position: absolute; left: 0; top: -40px; background-color: #808080; color: #ffffff; height: 30px; line-height: 30px; border-radius: 5px; padding: 0 15px; content: attr(data-tooltip); white-space: nowrap; display: none; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:after { position: absolute; left: 15px; top: -10px; border-top: 7px solid #808080; border-left: 7px solid transparent; border-right: 7px solid transparent; content: ""; display: none; } .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:hover:after, .NetworKit_Page .Measure .Stat .Group .List .Entry[data-tooltip]:hover:before { display: block; } .NetworKit_Page .Measure .Stat .Group .List .Entry .MathValue { font-family: "Courier New", Courier, monospace; } .NetworKit_Page .Measure:after { content: "."; visibility: hidden; display: block; height: 0; clear: both; } .NetworKit_Page .PartitionPie { clear: both; } .NetworKit_Page .PartitionPie img { width: 600px; } #NetworKit_Overlay { left: 0px; top: 0px; display: none; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000; } #NetworKit_Overlay_Title { position: absolute; color: white; transform: rotate(-90deg); width: 32em; height: 32em; padding-right: 0.5em; padding-top: 0.5em; text-align: right; font-size: 40px; } #NetworKit_Overlay .button { background: white; cursor: pointer; } #NetworKit_Overlay .button:before { size: 13px; display: inline-block; text-align: center; margin-top: 0.5em; margin-bottom: 0.5em; width: 1.5em; height: 1.5em; } #NetworKit_Overlay .icon-close:before { content: "X"; } #NetworKit_Overlay .icon-previous:before { content: "P"; } #NetworKit_Overlay .icon-next:before { content: "N"; } #NetworKit_Overlay .icon-save:before { content: "S"; } #NetworKit_Overlay_Toolbar_Top, #NetworKit_Overlay_Toolbar_Bottom { position: absolute; width: 40px; right: 13px; text-align: right; z-index: 1100; } #NetworKit_Overlay_Toolbar_Top { top: 0.5em; } #NetworKit_Overlay_Toolbar_Bottom { Bottom: 0.5em; } #NetworKit_Overlay_ImageContainer { position: absolute; top: 5%; left: 5%; height: 90%; width: 90%; background-repeat: no-repeat; background-position: center center; background-size: contain; } #NetworKit_Overlay_Image { height: 100%; width: 100%; background-repeat: no-repeat; background-position: center center; background-size: contain; }';
+        element.setAttribute('id', 'NetworKit_style');
+        document.head.appendChild(element);
+}
+
+
+{
+        var element = document.getElementById('NetworKit_Overlay');
+        if (element) {
+                element.parentNode.removeChild(element);
+        }
+        element = document.createElement('div');
+        element.innerHTML = '<div id="NetworKit_Overlay_Toolbar_Top"><div class="button icon-close" id="NetworKit_Overlay_Close" /></div><div id="NetworKit_Overlay_Title" /> <div id="NetworKit_Overlay_ImageContainer"> <div id="NetworKit_Overlay_Image" /> </div> <div id="NetworKit_Overlay_Toolbar_Bottom"> <div class="button icon-previous" onclick="NetworKit_overlayImageShift(-1)" /> <div class="button icon-next" onclick="NetworKit_overlayImageShift(1)" /> <a id="NetworKit_Overlay_Toolbar_Bottom_Save"><div class="button icon-save" /></a> </div>';
+        element.setAttribute('id', 'NetworKit_Overlay');
+        document.body.appendChild(element);
+        document.getElementById('NetworKit_Overlay_Close').onclick = function (e) {
+                document.getElementById('NetworKit_Overlay').style.display = 'none';
+        }
+}
+
+-->
+</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nnet</span><span class="o">.</span><span class="n">plot_</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>                            <div id="00b44b91-5f70-40d6-803e-f93cc73ba91e" class="plotly-graph-div" style="height:700px; width:700px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("00b44b91-5f70-40d6-803e-f93cc73ba91e")) {                    Plotly.newPlot(                        "00b44b91-5f70-40d6-803e-f93cc73ba91e",                        [{"hoverinfo":"none","line":{"color":"#888","width":0.7},"mode":"lines","x":[0.8058753939447559,-0.12571354608541987,null,0.8058753939447559,-0.504938885934907,null,-0.37772692623663334,-0.658244256099447,null,-0.37772692623663334,-0.3908862513067972,null,-0.37772692623663334,-0.8086571169398248,null,-0.6837492251276108,-0.2370265818177236,null,0.5072922691122365,0.1573590929490739,null,0.5072922691122365,-0.33392617558680027,null,0.4372662230195398,0.7877774157272162,null,0.4372662230195398,0.8568466475035557,null,-0.7737299439722093,-0.918059154753156,null,-0.7737299439722093,-0.33392617558680027,null,-0.7737299439722093,0.7877774157272162,null,-0.7737299439722093,0.752565624097366,null,-0.7737299439722093,0.8568466475035557,null,0.3157417956898757,0.752565624097366,null,-0.5935925567957895,0.6057455177285781,null,-0.5935925567957895,-0.6243361975602665,null,-0.5935925567957895,0.7389823222588969,null,-0.7172380848472714,0.5808069770520318,null,-0.7172380848472714,-0.42493095173523393,null,-0.7172380848472714,-0.13592078332450278,null,0.03429325779419068,-0.8623079716918405,null,0.03429325779419068,0.07391899467207864,null,0.03429325779419068,-0.2281765086115743,null,0.03429325779419068,0.7877774157272162,null,0.03429325779419068,0.8568466475035557,null,0.5876642083298903,-0.41061428535889277,null,0.5876642083298903,-0.6243361975602665,null,0.6057455177285781,-0.6020618896655789,null,0.6057455177285781,-0.13592078332450278,null,0.6057455177285781,0.824115582971705,null,0.6057455177285781,0.9038088221452232,null,-0.9063704268063834,0.5954892845855392,null,0.33540697740827,-0.8110137473870345,null,0.33540697740827,-0.2370265818177236,null,0.5808069770520318,-0.13592078332450278,null,0.5808069770520318,0.5954892845855392,null,-0.8295424945795913,0.1933430027461497,null,-0.8295424945795913,0.5939099802063739,null,-0.8295424945795913,0.824115582971705,null,-0.8295424945795913,0.9038088221452232,null,0.5145833827814725,-0.8623079716918405,null,-0.8623079716918405,0.8568466475035557,null,-0.3908862513067972,-0.8086571169398248,null,-0.3908862513067972,0.5954892845855392,null,0.037653919010253424,0.6709808915970813,null,0.037653919010253424,0.8655410097144967,null,0.037653919010253424,0.824115582971705,null,0.526839985471253,0.2737201091805279,null,0.526839985471253,-0.6020618896655789,null,0.526839985471253,0.7389823222588969,null,-0.42493095173523393,0.6709808915970813,null,0.1573590929490739,0.538506490836761,null,0.1573590929490739,-0.763628853376825,null,0.1573590929490739,0.824115582971705,null,-0.6243361975602665,-0.41061428535889277,null,-0.6243361975602665,0.28011957791286257,null,-0.41061428535889277,0.5939099802063739,null,-0.33392617558680027,-0.011237152710903706,null,-0.33392617558680027,0.8655410097144967,null,-0.33392617558680027,-0.763628853376825,null,-0.011237152710903706,0.8568466475035557,null,-0.011237152710903706,-0.763628853376825,null,-0.011237152710903706,0.5939099802063739,null,-0.011237152710903706,0.824115582971705,null,-0.8110137473870345,-0.2370265818177236,null,-0.8110137473870345,0.9038088221452232,null,0.1933430027461497,0.7877774157272162,null,0.1933430027461497,0.8568466475035557,null,0.1933430027461497,0.5954892845855392,null,0.6709808915970813,0.7389823222588969,null,0.6709808915970813,0.824115582971705,null,0.2737201091805279,0.8568466475035557,null,0.538506490836761,0.5954892845855392,null,0.7877774157272162,0.8568466475035557,null,0.7877774157272162,0.824115582971705,null,0.7877774157272162,0.9038088221452232,null,0.7877774157272162,0.5954892845855392,null,-0.6020618896655789,0.5939099802063739,null,0.7757708243286746,-0.13592078332450278,null,-0.8086571169398248,0.9038088221452232,null,-0.2370265818177236,0.5954892845855392,null,-0.763628853376825,0.9038088221452232,null,-0.763628853376825,0.5954892845855392,null,0.28011957791286257,-0.6211631993704144,null,-0.13592078332450278,0.824115582971705,null,-0.13592078332450278,0.9038088221452232,null,-0.13592078332450278,0.5954892845855392,null,-0.6211631993704144,0.9038088221452232,null,-0.6211631993704144,0.824115582971705,null,0.5939099802063739,0.9038088221452232,null,0.5939099802063739,0.5954892845855392,null,0.824115582971705,0.9038088221452232,null,0.9038088221452232,0.5954892845855392,null],"y":[-0.6813834489187894,-0.9999999999999999,null,-0.6813834489187894,-0.802528960443131,null,-0.8955355744681558,0.4937955988974128,null,-0.8955355744681558,0.8141255878109925,null,-0.8955355744681558,0.3729395693169565,null,-0.2764312450834805,0.7585168546444186,null,-0.4255073859235967,-0.911257200064483,null,-0.4255073859235967,-0.508365055504298,null,0.8204848469982199,-0.3565630611177699,null,0.8204848469982199,-0.16994681477191814,null,0.6744398532352834,-0.28847343505473777,null,0.6744398532352834,-0.508365055504298,null,0.6744398532352834,-0.3565630611177699,null,0.6744398532352834,-0.5310969644369316,null,0.6744398532352834,-0.16994681477191814,null,0.8305331731043891,-0.5310969644369316,null,0.8030186194124987,-0.6626078089030638,null,0.8030186194124987,-0.6685477331536738,null,0.8030186194124987,0.10204931262692057,null,0.5739492056470566,-0.9083407762091715,null,0.5739492056470566,-0.2707544589152552,null,0.5739492056470566,0.865386283128383,null,0.7847470461928298,0.21456649471175715,null,0.7847470461928298,-0.6541316439661735,null,0.7847470461928298,-0.8187795600377407,null,0.7847470461928298,-0.3565630611177699,null,0.7847470461928298,-0.16994681477191814,null,0.5268496587957534,0.6172292605941307,null,0.5268496587957534,-0.6685477331536738,null,-0.6626078089030638,0.3535554541969534,null,-0.6626078089030638,0.865386283128383,null,-0.6626078089030638,0.009122008280103355,null,-0.6626078089030638,0.17213949544400814,null,-0.045122896022423864,-0.17903082690479405,null,-0.9222582653200806,-0.42568858907906,null,-0.9222582653200806,0.7585168546444186,null,-0.9083407762091715,0.865386283128383,null,-0.9083407762091715,-0.17903082690479405,null,-0.006051605315577646,0.891495329603192,null,-0.006051605315577646,0.3445305954191204,null,-0.006051605315577646,0.009122008280103355,null,-0.006051605315577646,0.17213949544400814,null,0.13796532541660042,0.21456649471175715,null,0.21456649471175715,-0.16994681477191814,null,0.8141255878109925,0.3729395693169565,null,0.8141255878109925,-0.17903082690479405,null,0.9176329597691871,0.7287180929305922,null,0.9176329597691871,0.3594467877677102,null,0.9176329597691871,0.009122008280103355,null,-0.8489662619813438,-0.7698383503028332,null,-0.8489662619813438,0.3535554541969534,null,-0.8489662619813438,0.10204931262692057,null,-0.2707544589152552,0.7287180929305922,null,-0.911257200064483,0.8111358770339234,null,-0.911257200064483,-0.5789251202851672,null,-0.911257200064483,0.009122008280103355,null,-0.6685477331536738,0.6172292605941307,null,-0.6685477331536738,0.6597931574284734,null,0.6172292605941307,0.3445305954191204,null,-0.508365055504298,-0.9180142126627181,null,-0.508365055504298,0.3594467877677102,null,-0.508365055504298,-0.5789251202851672,null,-0.9180142126627181,-0.16994681477191814,null,-0.9180142126627181,-0.5789251202851672,null,-0.9180142126627181,0.3445305954191204,null,-0.9180142126627181,0.009122008280103355,null,-0.42568858907906,0.7585168546444186,null,-0.42568858907906,0.17213949544400814,null,0.891495329603192,-0.3565630611177699,null,0.891495329603192,-0.16994681477191814,null,0.891495329603192,-0.17903082690479405,null,0.7287180929305922,0.10204931262692057,null,0.7287180929305922,0.009122008280103355,null,-0.7698383503028332,-0.16994681477191814,null,0.8111358770339234,-0.17903082690479405,null,-0.3565630611177699,-0.16994681477191814,null,-0.3565630611177699,0.009122008280103355,null,-0.3565630611177699,0.17213949544400814,null,-0.3565630611177699,-0.17903082690479405,null,0.3535554541969534,0.3445305954191204,null,0.7457042867095748,0.865386283128383,null,0.3729395693169565,0.17213949544400814,null,0.7585168546444186,-0.17903082690479405,null,-0.5789251202851672,0.17213949544400814,null,-0.5789251202851672,-0.17903082690479405,null,0.6597931574284734,0.015746793478671004,null,0.865386283128383,0.009122008280103355,null,0.865386283128383,0.17213949544400814,null,0.865386283128383,-0.17903082690479405,null,0.015746793478671004,0.17213949544400814,null,0.015746793478671004,0.009122008280103355,null,0.3445305954191204,0.17213949544400814,null,0.3445305954191204,-0.17903082690479405,null,0.009122008280103355,0.17213949544400814,null,0.17213949544400814,-0.17903082690479405,null],"type":"scatter"},{"hoverinfo":"text","hovertext":["<b>air quality 05:029</b>","<b>biofuel 05:030</b>","<b>environmental management 05:023</b>","<b>hardness 05:041</b><br>  tribology 05:022<br>       wear 06:020","<b>microgrids 05:024</b><br>    forecasting 06:014<br>      harmonics 07:050<br>  power quality 11:064","<b>particle swarm optimization (pso) 05:026</b><br>  genetic algorithms 12:040","<b>sintering 05:056</b><br>  productivity 07:032<br>   environment 08:022","<b>supply chain management 05:021</b><br>      logistics 10:035<br>  supply chains 16:111","<b>transportation 05:041</b><br>                   colombia 08:054<br>                environment 08:022<br>                  logistics 10:035<br>  artificial neural network 15:076<br>              supply chains 16:111","<b>tribology 05:022</b><br>  hardness 05:041","<b>aged 06:027</b><br>  artificial neural network 15:076","<b>carbon nanotubes 06:020</b><br>   hydrogen 06:009<br>   coatings 08:031<br>  viscosity 10:040","<b>climate change 06:003</b><br>               natural gas 06:010<br>  precipitation (chemical) 07:020<br>          renewable energy 13:046","<b>costs 06:017</b><br>        storage 06:020<br>     efficiency 08:011<br>     ergonomics 08:038<br>      logistics 10:035<br>  supply chains 16:111","<b>forecasting 06:014</b><br>  microgrids 05:024","<b>geostatistics 06:008</b>","<b>high temperature 06:014</b><br>  corrosion 08:013<br>   coatings 08:031","<b>hydrogen 06:009</b><br>     carbon nanotubes 06:020<br>  mathematical models 10:033<br>     renewable energy 13:046<br>             modeling 22:118<br>           simulation 22:045","<b>metaheuristics 06:028</b><br>  optimization 31:103","<b>mining 06:044</b><br>  mathematical modeling 08:033<br>     genetic algorithms 12:040","<b>natural gas 06:010</b><br>    climate change 06:003<br>  renewable energy 13:046<br>      optimization 31:103","<b>risk 06:009</b><br>     methodology 08:026<br>  sustainability 14:047<br>        modeling 22:118<br>      simulation 22:045","<b>starch 06:039</b><br>  storage 06:020","<b>storage 06:020</b><br>          costs 06:017<br>         starch 06:039<br>  supply chains 16:111","<b>wear 06:020</b><br>  hardness 05:041","<b>calibration 07:006</b>","<b>harmonics 07:050</b><br>  power quality 11:064<br>     microgrids 05:024<br>   optimization 31:103","<b>kinetics 07:068</b><br>  temperature 08:066<br>   adsorption 09:053<br>     modeling 22:118","<b>nanoparticles 07:047</b><br>     characterization 09:056<br>  mathematical models 10:033<br>            viscosity 10:040","<b>precipitation (chemical) 07:020</b><br>     temperature 08:066<br>  climate change 06:003","<b>productivity 07:032</b><br>  sintering 05:056<br>     design 09:019<br>    quality 12:022<br>   modeling 22:118","<b>coatings 08:031</b><br>              corrosion 08:013<br>       high temperature 06:014<br>       carbon nanotubes 06:020<br>  mechanical properties 13:033","<b>colombia 08:054</b><br>  transportation 05:041","<b>corrosion 08:013</b><br>  high temperature 06:014<br>          coatings 08:031<br>    sustainability 14:047","<b>efficiency 08:011</b><br>  costs 06:017","<b>environment 08:022</b><br>       sintering 05:056<br>  transportation 05:041<br>      management 08:023<br>      adsorption 09:053<br>         quality 12:022","<b>ergonomics 08:038</b><br>  costs 06:017","<b>management 08:023</b><br>     environment 08:022<br>   supply chains 16:111<br>         quality 12:022<br>  sustainability 14:047<br>        modeling 22:118","<b>mathematical modeling 08:033</b><br>              mining 06:044<br>  genetic algorithms 12:040<br>          simulation 22:045","<b>methodology 08:026</b><br>           risk 06:009<br>      logistics 10:035<br>  supply chains 16:111<br>   optimization 31:103","<b>temperature 08:066</b><br>  precipitation (chemical) 07:020<br>                  kinetics 07:068<br>                 viscosity 10:040<br>                  modeling 22:118","<b>adsorption 09:053</b><br>     kinetics 07:068<br>  environment 08:022","<b>characterization 09:056</b><br>  nanoparticles 07:047<br>  supply chains 16:111","<b>design 09:019</b><br>  productivity 07:032<br>  optimization 31:103","<b>logistics 10:035</b><br>            supply chains 16:111<br>  supply chain management 05:021<br>           transportation 05:041<br>                    costs 06:017<br>              methodology 08:026<br>                 modeling 22:118<br>               simulation 22:045<br>             optimization 31:103","<b>mathematical models 10:033</b><br>        hydrogen 06:009<br>   nanoparticles 07:047<br>  sustainability 14:047","<b>viscosity 10:040</b><br>  carbon nanotubes 06:020<br>     nanoparticles 07:047<br>       temperature 08:066","<b>energy efficiency 11:051</b><br>  renewable energy 13:046","<b>power quality 11:064</b><br>   harmonics 07:050<br>  microgrids 05:024<br>  simulation 22:045","<b>genetic algorithms 12:040</b><br>  particle swarm optimization (pso) 05:026<br>                             mining 06:044<br>              mathematical modeling 08:033<br>                       optimization 31:103","<b>quality 12:022</b><br>  productivity 07:032<br>   environment 08:022<br>    management 08:023<br>    simulation 22:045<br>  optimization 31:103","<b>mechanical properties 13:033</b><br>               coatings 08:031<br>  finite element method 14:014","<b>renewable energy 13:046</b><br>  energy efficiency 11:051<br>     climate change 06:003<br>           hydrogen 06:009<br>        natural gas 06:010<br>           modeling 22:118<br>         simulation 22:045<br>       optimization 31:103","<b>finite element method 14:014</b><br>             simulation 22:045<br>  mechanical properties 13:033<br>               modeling 22:118","<b>sustainability 14:047</b><br>                 risk 06:009<br>            corrosion 08:013<br>           management 08:023<br>  mathematical models 10:033<br>           simulation 22:045<br>         optimization 31:103","<b>artificial neural network 15:076</b><br>  transportation 05:041<br>            aged 06:027","<b>supply chains 16:111</b><br>                logistics 10:035<br>               management 08:023<br>  supply chain management 05:021<br>           transportation 05:041<br>                    costs 06:017<br>                  storage 06:020<br>              methodology 08:026<br>         characterization 09:056","<b>modeling 22:118</b><br>               kinetics 07:068<br>               hydrogen 06:009<br>                   risk 06:009<br>           productivity 07:032<br>             simulation 22:045<br>             management 08:023<br>            temperature 08:066<br>              logistics 10:035<br>       renewable energy 13:046<br>  finite element method 14:014","<b>simulation 22:045</b><br>               hydrogen 06:009<br>                quality 12:022<br>                   risk 06:009<br>  finite element method 14:014<br>         sustainability 14:047<br>               modeling 22:118<br>  mathematical modeling 08:033<br>              logistics 10:035<br>          power quality 11:064<br>       renewable energy 13:046<br>           optimization 31:103","<b>optimization 31:103</b><br>           harmonics 07:050<br>  genetic algorithms 12:040<br>      metaheuristics 06:028<br>         natural gas 06:010<br>      sustainability 14:047<br>         methodology 08:026<br>              design 09:019<br>           logistics 10:035<br>          simulation 22:045<br>             quality 12:022<br>    renewable energy 13:046"],"marker":{"color":["#EB663B","#511CFB","#00A08B","#750D86","#1CA71C","#222A2A","#2E91E5","#E15F99","#E15F99","#750D86","#E15F99","#FB0D0D","#DA16FF","#E15F99","#1CA71C","#FB00D1","#B68100","#FB0D0D","#1CA71C","#222A2A","#DA16FF","#2E91E5","#E15F99","#E15F99","#750D86","#FC0080","#1CA71C","#2E91E5","#FB0D0D","#DA16FF","#2E91E5","#B68100","#E15F99","#B68100","#E15F99","#2E91E5","#E15F99","#2E91E5","#222A2A","#2E91E5","#DA16FF","#2E91E5","#FB0D0D","#2E91E5","#E15F99","#FB0D0D","#FB0D0D","#DA16FF","#1CA71C","#222A2A","#2E91E5","#B68100","#DA16FF","#2E91E5","#2E91E5","#E15F99","#E15F99","#2E91E5","#2E91E5","#1CA71C"],"line":{"color":"DarkSlateGrey","width":2},"size":[10.0,10.0,10.0,11.818181818181818,12.727272727272727,10.909090909090908,11.818181818181818,11.818181818181818,14.545454545454547,10.909090909090908,10.909090909090908,12.727272727272727,12.727272727272727,14.545454545454547,10.909090909090908,10.0,11.818181818181818,14.545454545454547,10.909090909090908,11.818181818181818,12.727272727272727,13.636363636363637,10.909090909090908,12.727272727272727,10.909090909090908,10.0,12.727272727272727,12.727272727272727,12.727272727272727,11.818181818181818,13.636363636363637,13.636363636363637,10.909090909090908,12.727272727272727,10.909090909090908,14.545454545454547,10.909090909090908,14.545454545454547,12.727272727272727,13.636363636363637,13.636363636363637,11.818181818181818,11.818181818181818,11.818181818181818,17.272727272727273,12.727272727272727,12.727272727272727,10.909090909090908,12.727272727272727,13.636363636363637,14.545454545454547,11.818181818181818,16.363636363636363,12.727272727272727,15.454545454545453,11.818181818181818,17.272727272727273,19.090909090909093,20.0,20.0]},"mode":"markers+text","text":["air quality 05:029","biofuel 05:030","environmental management 05:023","hardness 05:041","microgrids 05:024","particle swarm optimization (pso) 05:026","sintering 05:056","supply chain management 05:021","transportation 05:041","tribology 05:022","aged 06:027","carbon nanotubes 06:020","climate change 06:003","costs 06:017","forecasting 06:014","geostatistics 06:008","high temperature 06:014","hydrogen 06:009","metaheuristics 06:028","mining 06:044","natural gas 06:010","risk 06:009","starch 06:039","storage 06:020","wear 06:020","calibration 07:006","harmonics 07:050","kinetics 07:068","nanoparticles 07:047","precipitation (chemical) 07:020","productivity 07:032","coatings 08:031","colombia 08:054","corrosion 08:013","efficiency 08:011","environment 08:022","ergonomics 08:038","management 08:023","mathematical modeling 08:033","methodology 08:026","temperature 08:066","adsorption 09:053","characterization 09:056","design 09:019","logistics 10:035","mathematical models 10:033","viscosity 10:040","energy efficiency 11:051","power quality 11:064","genetic algorithms 12:040","quality 12:022","mechanical properties 13:033","renewable energy 13:046","finite element method 14:014","sustainability 14:047","artificial neural network 15:076","supply chains 16:111","modeling 22:118","simulation 22:045","optimization 31:103"],"textfont":{"size":[7.0,7.0,7.0,7.909090909090909,8.363636363636363,7.454545454545454,7.909090909090909,7.909090909090909,9.272727272727273,7.454545454545454,7.454545454545454,8.363636363636363,8.363636363636363,9.272727272727273,7.454545454545454,7.0,7.909090909090909,9.272727272727273,7.454545454545454,7.909090909090909,8.363636363636363,8.818181818181818,7.454545454545454,8.363636363636363,7.454545454545454,7.0,8.363636363636363,8.363636363636363,8.363636363636363,7.909090909090909,8.818181818181818,8.818181818181818,7.454545454545454,8.363636363636363,7.454545454545454,9.272727272727273,7.454545454545454,9.272727272727273,8.363636363636363,8.818181818181818,8.818181818181818,7.909090909090909,7.909090909090909,7.909090909090909,10.636363636363637,8.363636363636363,8.363636363636363,7.454545454545454,8.363636363636363,8.818181818181818,9.272727272727273,7.909090909090909,10.181818181818182,8.363636363636363,9.727272727272727,7.909090909090909,10.636363636363637,11.545454545454547,12.0,12.0]},"textposition":["bottom left","bottom right","top right","bottom right","bottom left","bottom left","bottom right","top right","top left","bottom left","top right","top left","top left","top right","top left","top left","top right","bottom right","bottom left","bottom right","bottom right","bottom left","top right","top left","bottom left","top left","top left","top right","bottom right","bottom left","bottom right","bottom left","bottom left","top left","bottom right","bottom left","bottom left","bottom left","bottom left","top right","top right","top right","bottom right","top right","bottom right","top left","top right","top right","top left","top left","bottom left","top right","top left","top left","top right","bottom right","bottom right","top right","top right","bottom right"],"x":[-0.7362451367923746,0.18320936025835374,0.8747662182000344,0.8058753939447559,-0.37772692623663334,-0.6837492251276108,0.5072922691122365,0.4372662230195398,-0.7737299439722093,-0.12571354608541987,0.3157417956898757,-0.5935925567957895,-0.7172380848472714,0.03429325779419068,-0.658244256099447,-0.9611494079717293,0.5876642083298903,0.6057455177285781,-0.9063704268063834,0.33540697740827,0.5808069770520318,-0.8295424945795913,0.5145833827814725,-0.8623079716918405,-0.504938885934907,-0.17771344678758683,-0.3908862513067972,0.037653919010253424,0.526839985471253,-0.42493095173523393,0.1573590929490739,-0.6243361975602665,-0.918059154753156,-0.41061428535889277,0.07391899467207864,-0.33392617558680027,-0.2281765086115743,-0.011237152710903706,-0.8110137473870345,0.1933430027461497,0.6709808915970813,0.8655410097144967,0.2737201091805279,0.538506490836761,0.7877774157272162,-0.6020618896655789,0.7389823222588969,0.7757708243286746,-0.8086571169398248,-0.2370265818177236,-0.763628853376825,0.28011957791286257,-0.13592078332450278,-0.6211631993704144,0.5939099802063739,0.752565624097366,0.8568466475035557,0.824115582971705,0.9038088221452232,0.5954892845855392],"y":[-0.8080119290167564,-0.4416706865426441,0.5610641299169962,-0.6813834489187894,-0.8955355744681558,-0.2764312450834805,-0.4255073859235967,0.8204848469982199,0.6744398532352834,-0.9999999999999999,0.8305331731043891,0.8030186194124987,0.5739492056470566,0.7847470461928298,0.4937955988974128,0.20673644123678944,0.5268496587957534,-0.6626078089030638,-0.045122896022423864,-0.9222582653200806,-0.9083407762091715,-0.006051605315577646,0.13796532541660042,0.21456649471175715,-0.802528960443131,0.6064117706568721,0.8141255878109925,0.9176329597691871,-0.8489662619813438,-0.2707544589152552,-0.911257200064483,-0.6685477331536738,-0.28847343505473777,0.6172292605941307,-0.6541316439661735,-0.508365055504298,-0.8187795600377407,-0.9180142126627181,-0.42568858907906,0.891495329603192,0.7287180929305922,0.3594467877677102,-0.7698383503028332,0.8111358770339234,-0.3565630611177699,0.3535554541969534,0.10204931262692057,0.7457042867095748,0.3729395693169565,0.7585168546444186,-0.5789251202851672,0.6597931574284734,0.865386283128383,0.015746793478671004,0.3445305954191204,-0.5310969644369316,-0.16994681477191814,0.009122008280103355,0.17213949544400814,-0.17903082690479405],"type":"scatter"}],                        {"annotations":[{"align":"left","font":{"size":10},"showarrow":false,"text":"","x":0.005,"xref":"paper","y":-0.002,"yref":"paper"}],"hovermode":"closest","margin":{"b":0,"l":0,"r":0,"t":0},"showlegend":false,"title":{"font":{"size":16},"text":""},"xaxis":{"showgrid":false,"showticklabels":false,"zeroline":false,"range":[-2.0,2.0]},"yaxis":{"showgrid":false,"showticklabels":false,"zeroline":false},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"hoverlabel":{"font":{"family":"monospace"},"bgcolor":"white"},"paper_bgcolor":"white","plot_bgcolor":"white","width":700,"height":700},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('00b44b91-5f70-40d6-803e-f93cc73ba91e');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nnet</span><span class="o">.</span><span class="n">communities_</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CL_00</th>
+      <th>CL_01</th>
+      <th>CL_02</th>
+      <th>CL_03</th>
+      <th>CL_04</th>
+      <th>CL_05</th>
+      <th>CL_06</th>
+      <th>CL_07</th>
+      <th>CL_08</th>
+      <th>CL_09</th>
+      <th>CL_10</th>
+      <th>CL_11</th>
+      <th>CL_12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>modeling 22:118</td>
+      <td>supply chains 16:111</td>
+      <td>optimization 31:103</td>
+      <td>viscosity 10:040</td>
+      <td>renewable energy 13:046</td>
+      <td>genetic algorithms 12:040</td>
+      <td>mechanical properties 13:033</td>
+      <td>wear 06:020</td>
+      <td>air quality 05:029</td>
+      <td>biofuel 05:030</td>
+      <td>environmental management 05:023</td>
+      <td>geostatistics 06:008</td>
+      <td>calibration 07:006</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>simulation 22:045</td>
+      <td>artificial neural network 15:076</td>
+      <td>power quality 11:064</td>
+      <td>mathematical models 10:033</td>
+      <td>energy efficiency 11:051</td>
+      <td>mathematical modeling 08:033</td>
+      <td>coatings 08:031</td>
+      <td>hardness 05:041</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>sustainability 14:047</td>
+      <td>logistics 10:035</td>
+      <td>harmonics 07:050</td>
+      <td>characterization 09:056</td>
+      <td>temperature 08:066</td>
+      <td>mining 06:044</td>
+      <td>corrosion 08:013</td>
+      <td>tribology 05:022</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>finite element method 14:014</td>
+      <td>colombia 08:054</td>
+      <td>metaheuristics 06:028</td>
+      <td>nanoparticles 07:047</td>
+      <td>precipitation (chemical) 07:020</td>
+      <td>particle swarm optimization (pso) 05:026</td>
+      <td>high temperature 06:014</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>quality 12:022</td>
+      <td>ergonomics 08:038</td>
+      <td>forecasting 06:014</td>
+      <td>carbon nanotubes 06:020</td>
+      <td>natural gas 06:010</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>adsorption 09:053</td>
+      <td>efficiency 08:011</td>
+      <td>microgrids 05:024</td>
+      <td>hydrogen 06:009</td>
+      <td>climate change 06:003</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>design 09:019</td>
+      <td>starch 06:039</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>methodology 08:026</td>
+      <td>aged 06:027</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>management 08:023</td>
+      <td>storage 06:020</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>environment 08:022</td>
+      <td>costs 06:017</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nnet</span><span class="o">.</span><span class="n">degree_plot_</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>                            <div id="7ca1781c-0184-44d4-8b9a-1d27c1fac757" class="plotly-graph-div" style="height:700px; width:700px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7ca1781c-0184-44d4-8b9a-1d27c1fac757")) {                    Plotly.newPlot(                        "7ca1781c-0184-44d4-8b9a-1d27c1fac757",                        [{"customdata":[["optimization 31:103"],["simulation 22:045"],["modeling 22:118"],["logistics 10:035"],["supply chains 16:111"],["renewable energy 13:046"],["sustainability 14:047"],["environment 08:022"],["management 08:023"],["costs 06:017"],["hydrogen 06:009"],["transportation 05:041"],["quality 12:022"],["temperature 08:066"],["methodology 08:026"],["risk 06:009"],["coatings 08:031"],["genetic algorithms 12:040"],["productivity 07:032"],["climate change 06:003"],["nanoparticles 07:047"],["natural gas 06:010"],["mathematical modeling 08:033"],["mathematical models 10:033"],["viscosity 10:040"],["corrosion 08:013"],["power quality 11:064"],["carbon nanotubes 06:020"],["kinetics 07:068"],["harmonics 07:050"],["finite element method 14:014"],["storage 06:020"],["microgrids 05:024"],["sintering 05:056"],["adsorption 09:053"],["supply chain management 05:021"],["artificial neural network 15:076"],["design 09:019"],["characterization 09:056"],["hardness 05:041"],["mechanical properties 13:033"],["mining 06:044"],["high temperature 06:014"],["precipitation (chemical) 07:020"],["forecasting 06:014"],["starch 06:039"],["aged 06:027"],["efficiency 08:011"],["energy efficiency 11:051"],["colombia 08:054"],["tribology 05:022"],["ergonomics 08:038"],["metaheuristics 06:028"],["particle swarm optimization (pso) 05:026"],["wear 06:020"],["environmental management 05:023"],["biofuel 05:030"],["calibration 07:006"],["geostatistics 06:008"],["air quality 05:029"]],"hovertemplate":"Node=%{x}<br>Degree=%{y}<br>Name=%{customdata[0]}<extra></extra>","legendgroup":"","line":{"color":"darkslategray","dash":"solid"},"marker":{"symbol":"circle","line":{"color":"darkslategray","width":2},"color":"rgb(171,171,171)","size":8},"mode":"lines+markers","name":"","orientation":"v","showlegend":false,"x":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59],"xaxis":"x","y":[11,11,10,8,8,7,6,5,5,5,5,5,5,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Node"},"linecolor":"gray","linewidth":2,"gridcolor":"lightgray","griddash":"dot"},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Degree"},"linecolor":"gray","linewidth":2,"gridcolor":"lightgray","griddash":"dot"},"legend":{"tracegroupgap":0},"margin":{"t":60},"paper_bgcolor":"white","plot_bgcolor":"white","width":700,"height":700},                        {"responsive": true}                    ).then(function(){
+
+var gd = document.getElementById('7ca1781c-0184-44d4-8b9a-1d27c1fac757');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nnet</span><span class="o">.</span><span class="n">indicators_</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>group</th>
+      <th>betweenness</th>
+      <th>closeness</th>
+      <th>pagerank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>air quality 05:029</th>
+      <td>8</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.002691</td>
+    </tr>
+    <tr>
+      <th>biofuel 05:030</th>
+      <td>9</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.002691</td>
+    </tr>
+    <tr>
+      <th>environmental management 05:023</th>
+      <td>10</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.002691</td>
+    </tr>
+    <tr>
+      <th>hardness 05:041</th>
+      <td>7</td>
+      <td>0.000584</td>
+      <td>0.033898</td>
+      <td>0.026191</td>
+    </tr>
+    <tr>
+      <th>microgrids 05:024</th>
+      <td>2</td>
+      <td>0.029223</td>
+      <td>0.227241</td>
+      <td>0.023028</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor Facultad de Minas, Universidad Nacional de Colombia, 2023.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
